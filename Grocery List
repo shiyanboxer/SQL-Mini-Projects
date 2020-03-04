@@ -1,0 +1,20 @@
+BEGIN TRANSACTION;
+
+/* Create a table called Groceries */
+CREATE TABLE Groceries(Id integer PRIMARY KEY, Name text, Quantity integer, Aisle integer);
+
+/* Add items to the Groceries list */
+INSERT INTO Groceries VALUES(1,'Bananna', 3, 6);
+INSERT INTO Groceries VALUES(2,'Apple', 2, 2);
+INSERT INTO Groceries VALUES(3,'Pear', 5,5);
+INSERT INTO Groceries VALUES(4,'Orange', 1, 1);
+INSERT INTO Groceries VALUES(5,'Mango', 8, 2);
+COMMIT;
+
+/* Display all items in Grociers table */
+/* ODER BY orders by a certain category */
+/* WHERE selects only elements within the condition */
+SELECT * FROM Groceries WHERE Aisle > 5 ORDER BY Aisle;
+
+/* AGREGATE function - prints number of elemets in each aisle*/
+SELECT Aisle, SUM(quantity) FROM Groceries GROUP BY Aisle; 
