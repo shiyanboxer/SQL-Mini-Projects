@@ -1,3 +1,4 @@
+
 BEGIN TRANSACTION;
 
 /* Create a table called Groceries */
@@ -11,10 +12,10 @@ INSERT INTO Groceries VALUES(4,'Orange', 1, 1);
 INSERT INTO Groceries VALUES(5,'Mango', 8, 2);
 COMMIT;
 
-/* Display all items in Grociers table */
-/* ODER BY orders by a certain category */
+/* Display all items in Groceries table */
+/* ORDER BY orders by a certain category */
 /* WHERE selects only elements within the condition */
 SELECT * FROM Groceries WHERE Aisle > 5 ORDER BY Aisle;
 
-/* AGREGATE function - prints number of elemets in each aisle*/
-SELECT Aisle, SUM(quantity) FROM Groceries GROUP BY Aisle; 
+/* AGGREGATE function - prints number of elements in each aisle*/
+SELECT Aisle, SUM(Quantity) FROM Groceries GROUP BY Aisle;
